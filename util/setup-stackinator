@@ -43,4 +43,4 @@ git clone --quiet "${cluster_repo}" "${cluster_path}" || err "unable to clone cl
 
 log "checkout alps-cluster-config ${stackinator_version}-libfabric-buildable"
 cd "${cluster_path}"
-git checkout --quiet "${stackinator_version}" || err "unable to checkout out requested version"
+git checkout "${stackinator_version}" || err "unable to checkout out requested version"
