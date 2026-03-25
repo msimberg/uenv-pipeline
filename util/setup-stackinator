@@ -17,7 +17,7 @@ else
     err "invalide uenv recipe version '${uenv_recipe_version}': must be '1' ir '2'"
 fi
 
-stackinator_version="${stackinator_version}-libfabric-buildable"
+stackinator_version="${stackinator_version}"
 log "using stackinator version ${stackinator_version}"
 
 log "installing stackinator from git in '${stackinator_path}'"
@@ -41,6 +41,6 @@ cluster_repo=https://github.com/eth-cscs/alps-cluster-config
 log "cloning cluster config from ${cluster_repo}"
 git clone --quiet "${cluster_repo}" "${cluster_path}" || err "unable to clone cluster-config git repository"
 
-log "checkout alps-cluster-config ${stackinator_version}"
+log "checkout alps-cluster-config ${stackinator_version}-libfabric-buildable"
 cd "${cluster_path}"
 git checkout --quiet "${stackinator_version}" || err "unable to checkout out requested version"
